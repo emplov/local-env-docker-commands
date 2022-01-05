@@ -1,0 +1,6 @@
+mysql:
+	docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -v ./mysql:/var/lib/mysql -d mysql
+ubuntu-mysql:
+	docker run -d --name mysql -e TZ=UTC -p 3306:3306 -v ./mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 ubuntu/mysql:8.0-21.10_beta
+redis:
+	docker run --name redis -d redis
